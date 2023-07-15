@@ -708,7 +708,7 @@
                                 <div class="product-item">
                                     <div class="pd-bd product-inner">
                                         <div class="product-img">
-                                            <a href="{% url 'onsale' pr_id=i.id %}"><img src="{{ i.rasm.url }}" alt="" class="img-reponsive"></a>
+                                            <a href=""><img src="{{ i.image.url }}" alt="" class="img-reponsive"></a>
                                         </div>
                                         <div class="product-info">
                                             <div class="color-group">
@@ -730,10 +730,10 @@
                                                     <span class="star star-1"></span>
                                                     <div class="number-rating">( 896 reviews )</div>
                                                 </div>
-                                                <p class="product-cate">{{ i.tur }}</p>
-                                                <h3 class="product-title"><a href="#">{{ i.nomi }}</a></h3>
+                                                <p class="product-cate">{{ i.type }}</p>
+                                                <h3 class="product-title"><a href="#">{{ i.name }}</a></h3>
                                                 <div class="product-bottom">
-                                                    <div class="product-price"><span>{{ i.price }}</span></div>
+                                                    <div class="product-price"><span>{{ i.sell_price }}</span></div>
                                                     <a href="#" class="btn-icon btn-view">
                                                             <span class="icon-bg icon-view"></span>
                                                         </a>

@@ -16,19 +16,19 @@ Including another URLconf
 from django.conf.urls.static import static
 from djangofiles import settings
 from django.contrib import admin
-from django.urls import path
-from myfiles.views import *
+from django.urls import path, include
+from products.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index,name='index'),
-    path('full_shop',full_shop,name='full_shop'),
-    path('indx_filter/notebook/<str:id>/',index_filter,name='indx_filter'),
-    path('onsale/<str:pr_id>/',onsale,name='onsale'),
-    path('onsale/like/<str:pr_id>/',onsale2,name='onsale2'),
-    path('onsale/suvenir/<str:pr_id>/',onsale3,name='onsale3'),
-    path('checkout',checkout,name='checkout'),
-    path('cart/',cart,name='cart'),
+    path('',include('products.urls')),
+    path('full_shop',Homeview,name='full_shop'),
+    path('indx_filter/notebook/<str:id>/',Homeview,name='indx_filter'),
+    path('onsale/',onsale,name='onsale'),
+    path('onsale/like/',onsale,name='onsale2'),
+    path('onsale/suvenir/',onsale,name='onsale3'),
+    path('checkout',Homeview,name='checkout'),
+    path('cart/',Homeview,name='cart'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIAFILE_DIRS)
